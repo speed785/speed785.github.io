@@ -1,0 +1,175 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="640" viewBox="0 0 1280 640">
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#1a1a1a" stroke-width="0.5"/>
+    </pattern>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="18" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+    <filter id="textGlow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+    <filter id="noise">
+      <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/>
+      <feColorMatrix type="saturate" values="0"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.04"/>
+      </feComponentTransfer>
+      <feBlend in="SourceGraphic" mode="overlay"/>
+    </filter>
+    <!-- Multi-color ambient gradient -->
+    <radialGradient id="glow1" cx="200" cy="250" r="300" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00ff88" stop-opacity="0.08"/>
+      <stop offset="100%" stop-color="#00ff88" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="500" cy="400" r="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#a855f7" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#a855f7" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow3" cx="800" cy="250" r="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff4444" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ff4444" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow4" cx="1050" cy="350" r="250" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.06"/>
+      <stop offset="100%" stop-color="#00d4ff" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow5" cx="640" cy="320" r="350" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#ff8800" stop-opacity="0.04"/>
+      <stop offset="100%" stop-color="#ff8800" stop-opacity="0"/>
+    </radialGradient>
+    <!-- Multi-color top line gradient -->
+    <linearGradient id="topLine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#00ff88"/>
+      <stop offset="25%" stop-color="#a855f7"/>
+      <stop offset="50%" stop-color="#ff4444"/>
+      <stop offset="75%" stop-color="#00d4ff"/>
+      <stop offset="100%" stop-color="#ff8800"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1280" height="640" fill="#0d0d0d"/>
+  <rect width="1280" height="640" fill="url(#grid)"/>
+
+  <!-- Multi-color ambient glows -->
+  <rect width="1280" height="640" fill="url(#glow1)"/>
+  <rect width="1280" height="640" fill="url(#glow2)"/>
+  <rect width="1280" height="640" fill="url(#glow3)"/>
+  <rect width="1280" height="640" fill="url(#glow4)"/>
+  <rect width="1280" height="640" fill="url(#glow5)"/>
+
+  <!-- Multi-color accent lines -->
+  <rect x="0" y="0" width="1280" height="3" fill="url(#topLine)" opacity="0.7"/>
+  <rect x="0" y="637" width="1280" height="3" fill="url(#topLine)" opacity="0.2"/>
+
+  <!-- Terminal-style output header -->
+  <g font-family="'JetBrains Mono', 'Fira Code', monospace">
+    <!-- Terminal prompt lines (faded, above center) -->
+    <text x="180" y="150" font-size="14" fill="#333333" letter-spacing="1">
+      $ ls ~/tools
+    </text>
+
+    <!-- Tool names as terminal output, staggered -->
+    <g font-size="16" letter-spacing="1">
+      <text x="180" y="180" fill="#00ff88" opacity="0.5">drwxr-xr-x  agentlens/</text>
+      <text x="180" y="202" fill="#a855f7" opacity="0.5">drwxr-xr-x  neuromem/</text>
+      <text x="180" y="224" fill="#ff4444" opacity="0.5">drwxr-xr-x  sentinel-inject/</text>
+      <text x="180" y="246" fill="#00d4ff" opacity="0.5">drwxr-xr-x  synapse/</text>
+      <text x="180" y="268" fill="#ff8800" opacity="0.5">drwxr-xr-x  evalforge/</text>
+    </g>
+  </g>
+
+  <!-- === CENTER: Main title === -->
+  <g filter="url(#glow)">
+    <text x="640" y="370" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="68" font-weight="700" fill="#00ff88" text-anchor="middle" letter-spacing="-2">
+      AI Agent Tooling
+    </text>
+  </g>
+
+  <!-- Subtitle: all tool names -->
+  <text x="640" y="420" font-family="-apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="20" text-anchor="middle" fill="#888888" letter-spacing="1">
+    <tspan fill="#00ff88" opacity="0.8">agentlens</tspan>
+    <tspan fill="#444444"> · </tspan>
+    <tspan fill="#a855f7" opacity="0.8">neuromem</tspan>
+    <tspan fill="#444444"> · </tspan>
+    <tspan fill="#ff4444" opacity="0.8">sentinel-inject</tspan>
+    <tspan fill="#444444"> · </tspan>
+    <tspan fill="#00d4ff" opacity="0.8">synapse</tspan>
+    <tspan fill="#444444"> · </tspan>
+    <tspan fill="#ff8800" opacity="0.8">evalforge</tspan>
+  </text>
+
+  <!-- Tagline -->
+  <text x="640" y="458" font-family="-apple-system, 'Segoe UI', Helvetica, sans-serif" font-size="16" text-anchor="middle" fill="#555555" letter-spacing="2">
+    Open-source tools for building reliable AI agents
+  </text>
+
+  <!-- Decorative horizontal lines around title -->
+  <line x1="180" y1="310" x2="500" y2="310" stroke="#222222" stroke-width="1"/>
+  <line x1="780" y1="310" x2="1100" y2="310" stroke="#222222" stroke-width="1"/>
+  <line x1="180" y1="480" x2="500" y2="480" stroke="#222222" stroke-width="1"/>
+  <line x1="780" y1="480" x2="1100" y2="480" stroke="#222222" stroke-width="1"/>
+
+  <!-- Color dots as visual accents on the lines -->
+  <circle cx="500" cy="310" r="3" fill="#00ff88" opacity="0.4"/>
+  <circle cx="780" cy="310" r="3" fill="#a855f7" opacity="0.4"/>
+  <circle cx="500" cy="480" r="3" fill="#00d4ff" opacity="0.4"/>
+  <circle cx="780" cy="480" r="3" fill="#ff8800" opacity="0.4"/>
+
+  <!-- Small tool icons row at bottom -->
+  <!-- Eye (agentlens) -->
+  <g transform="translate(360, 530)" opacity="0.3">
+    <path d="M -15 0 Q 0 -12 15 0 Q 0 12 -15 0 Z" fill="none" stroke="#00ff88" stroke-width="1.5"/>
+    <circle cx="0" cy="0" r="4" fill="#00ff88" opacity="0.5"/>
+  </g>
+  <!-- Brain (neuromem) -->
+  <g transform="translate(480, 530)" opacity="0.3">
+    <circle cx="0" cy="0" r="5" fill="none" stroke="#a855f7" stroke-width="1.5"/>
+    <circle cx="-8" cy="-4" r="3" fill="none" stroke="#a855f7" stroke-width="1"/>
+    <circle cx="8" cy="-4" r="3" fill="none" stroke="#a855f7" stroke-width="1"/>
+  </g>
+  <!-- Shield (sentinel) -->
+  <g transform="translate(600, 530)" opacity="0.3">
+    <path d="M 0 -10 L 10 -5 L 10 5 Q 10 12 0 15 Q -10 12 -10 5 L -10 -5 Z" fill="none" stroke="#ff4444" stroke-width="1.5"/>
+  </g>
+  <!-- DAG (synapse) -->
+  <g transform="translate(720, 530)" opacity="0.3">
+    <circle cx="-10" cy="0" r="3" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+    <circle cx="10" cy="-7" r="3" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+    <circle cx="10" cy="7" r="3" fill="none" stroke="#00d4ff" stroke-width="1.5"/>
+    <line x1="-7" y1="0" x2="7" y2="-7" stroke="#00d4ff" stroke-width="1"/>
+    <line x1="-7" y1="0" x2="7" y2="7" stroke="#00d4ff" stroke-width="1"/>
+  </g>
+  <!-- Anvil (evalforge) -->
+  <g transform="translate(840, 530)" opacity="0.3">
+    <path d="M -8 5 L 8 5 L 10 10 L -10 10 Z" fill="none" stroke="#ff8800" stroke-width="1.5"/>
+    <path d="M -5 0 L 5 0 L 8 5 L -8 5 Z" fill="none" stroke="#ff8800" stroke-width="1"/>
+    <path d="M -2 -6 L 5 -10 L 8 -3" fill="none" stroke="#ff8800" stroke-width="1.5"/>
+  </g>
+
+  <!-- Footer URL -->
+  <text x="640" y="580" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="16" text-anchor="middle" fill="#444444" letter-spacing="3">
+    speed785.github.io
+  </text>
+
+  <!-- Corner decorations (multi-color) -->
+  <g stroke-width="1" opacity="0.25">
+    <path d="M 20 20 L 20 50" stroke="#00ff88"/>
+    <path d="M 20 20 L 50 20" stroke="#00ff88"/>
+    <path d="M 1260 20 L 1260 50" stroke="#a855f7"/>
+    <path d="M 1260 20 L 1230 20" stroke="#a855f7"/>
+    <path d="M 20 620 L 20 590" stroke="#00d4ff"/>
+    <path d="M 20 620 L 50 620" stroke="#00d4ff"/>
+    <path d="M 1260 620 L 1260 590" stroke="#ff8800"/>
+    <path d="M 1260 620 L 1230 620" stroke="#ff8800"/>
+  </g>
+
+  <!-- Noise overlay -->
+  <rect width="1280" height="640" filter="url(#noise)" opacity="0.5"/>
+</svg>
