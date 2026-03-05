@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>speed785 — AI Agent Tooling</title>
+  <meta name="description" content="Open-source tools for AI agent pipelines: observability, memory, security, orchestration, and evaluation.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=IBM+Plex+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Particle canvas background -->
+  <canvas id="particles"></canvas>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-bracket">[</span>speed785<span class="logo-bracket">]</span>
+      </a>
+      <div class="nav-links">
+        <a href="#tools">Tools</a>
+        <a href="https://github.com/speed785" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero" id="hero">
+    <div class="hero-content">
+      <div class="hero-badge fade-in">open source &middot; MIT licensed</div>
+      <h1 class="hero-title fade-in">
+        <span class="hero-line">AI Agent Tooling.</span>
+        <span class="hero-line accent">Built for builders<span class="cursor">_</span></span>
+      </h1>
+      <p class="hero-sub fade-in">
+        We're solving the real bottlenecks in AI agent pipelines &mdash; 
+        <em>observability</em>, <em>memory</em>, <em>security</em>, <em>orchestration</em>, and <em>evaluation</em>.
+      </p>
+      <div class="hero-cta fade-in">
+        <a href="#tools" class="btn btn-primary">Explore tools &darr;</a>
+        <a href="https://github.com/speed785" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+    <div class="hero-terminal fade-in">
+      <div class="terminal-bar">
+        <span class="terminal-dot red"></span>
+        <span class="terminal-dot yellow"></span>
+        <span class="terminal-dot green"></span>
+        <span class="terminal-title">terminal</span>
+      </div>
+      <div class="terminal-body">
+        <code>
+          <span class="t-prompt">$</span> <span class="t-cmd">pip install</span> agentlens neuromem sentinel-inject<br>
+          <span class="t-prompt">$</span> <span class="t-cmd">pip install</span> synapse-orchestrator evalforge<br>
+          <span class="t-comment"># Zero required dependencies. Works with any LLM provider.</span><br>
+          <span class="t-prompt">$</span> <span class="t-cmd">agentlens</span> view trace.json<br>
+          <span class="t-output">AgentLens — loaded 12 calls from trace.json</span><br>
+          <span class="t-output t-success">✓ 11 succeeded</span> &nbsp; <span class="t-output t-error">✗ 1 failed</span> &nbsp; <span class="t-output t-dim">312ms total</span>
+        </code>
+      </div>
+    </div>
+  </header>
+
+  <!-- Tools Section -->
+  <section class="tools-section" id="tools">
+    <div class="section-header fade-in">
+      <h2 class="section-title">The Stack</h2>
+      <p class="section-sub">Five tools. One mission: make AI agents observable, reliable, and fast.</p>
+    </div>
+
+    <div class="tools-grid">
+
+      <!-- agentlens -->
+      <article class="tool-card fade-in" data-accent="green">
+        <div class="card-icon">
+          <img src="assets/agentlens-icon.svg" alt="AgentLens icon" width="80" height="80">
+        </div>
+        <h3 class="card-name">agentlens</h3>
+        <p class="card-tagline">DevTools for AI agents &mdash; profile every call, find every bottleneck</p>
+        <ul class="card-features">
+          <li>Per-call latency &amp; token accounting</li>
+          <li>Drop-in OpenAI &amp; Anthropic wrappers</li>
+          <li>JSON trace export &amp; CLI viewer</li>
+        </ul>
+        <div class="card-actions">
+          <a href="https://github.com/speed785/agentlens" target="_blank" rel="noopener" class="btn btn-sm btn-outline-green">
+            GitHub &rarr;
+          </a>
+          <a href="https://speed785.github.io/agentlens" class="btn btn-sm btn-ghost-sm">Docs</a>
+        </div>
+      </article>
+
+      <!-- neuromem -->
+      <article class="tool-card fade-in" data-accent="purple">
+        <div class="card-icon">
+          <img src="assets/neuromem-icon.svg" alt="Neuromem icon" width="80" height="80">
+        </div>
+        <h3 class="card-name">neuromem</h3>
+        <p class="card-tagline">Smart context management &mdash; never lose critical memory again</p>
+        <ul class="card-features">
+          <li>Multi-factor importance scoring</li>
+          <li>Extractive &amp; abstractive summarization</li>
+          <li>Token budget enforcement</li>
+        </ul>
+        <div class="card-actions">
+          <a href="https://github.com/speed785/neuromem" target="_blank" rel="noopener" class="btn btn-sm btn-outline-purple">
+            GitHub &rarr;
+          </a>
+          <a href="https://speed785.github.io/neuromem" class="btn btn-sm btn-ghost-sm">Docs</a>
+        </div>
+      </article>
+
+      <!-- sentinel-inject -->
+      <article class="tool-card fade-in" data-accent="red">
+        <div class="card-icon">
+          <img src="assets/sentinel-inject-icon.svg" alt="Sentinel Inject icon" width="80" height="80">
+        </div>
+        <h3 class="card-name">sentinel-inject</h3>
+        <p class="card-tagline">Prompt injection defense &mdash; screen every tool result before it hits your agent</p>
+        <ul class="card-features">
+          <li>Dual-layer: rules + LLM classification</li>
+          <li>4 sanitization modes (label/redact/escape/block)</li>
+          <li>Middleware wraps any tool in one line</li>
+        </ul>
+        <div class="card-actions">
+          <a href="https://github.com/speed785/sentinel-inject" target="_blank" rel="noopener" class="btn btn-sm btn-outline-red">
+            GitHub &rarr;
+          </a>
+          <a href="https://speed785.github.io/sentinel-inject" class="btn btn-sm btn-ghost-sm">Docs</a>
+        </div>
+      </article>
+
+      <!-- synapse-orchestrator -->
+      <article class="tool-card fade-in" data-accent="cyan">
+        <div class="card-icon">
+          <img src="assets/synapse-orchestrator-icon.svg" alt="Synapse Orchestrator icon" width="80" height="80">
+        </div>
+        <h3 class="card-name">synapse-orchestrator</h3>
+        <p class="card-tagline">Parallel tool execution &mdash; auto-detect dependencies, maximize speed</p>
+        <ul class="card-features">
+          <li>Automatic dependency DAG analysis</li>
+          <li>3&ndash;10&times; speedup on fan-out pipelines</li>
+          <li>OpenAI &amp; Anthropic integrations</li>
+        </ul>
+        <div class="card-actions">
+          <a href="https://github.com/speed785/synapse-orchestrator" target="_blank" rel="noopener" class="btn btn-sm btn-outline-cyan">
+            GitHub &rarr;
+          </a>
+          <a href="https://speed785.github.io/synapse-orchestrator" class="btn btn-sm btn-ghost-sm">Docs</a>
+        </div>
+      </article>
+
+      <!-- evalforge -->
+      <article class="tool-card fade-in" data-accent="orange">
+        <div class="card-icon">
+          <img src="assets/evalforge-icon.svg" alt="EvalForge icon" width="80" height="80">
+        </div>
+        <h3 class="card-name">evalforge</h3>
+        <p class="card-tagline">Agent evaluation harness &mdash; repeatable evals, regression detection, CI-ready</p>
+        <ul class="card-features">
+          <li>6 scoring strategies (exact, fuzzy, LLM judge&hellip;)</li>
+          <li>Regression tracking across runs</li>
+          <li>HTML &amp; JSON report generation</li>
+        </ul>
+        <div class="card-actions">
+          <a href="https://github.com/speed785/evalforge" target="_blank" rel="noopener" class="btn btn-sm btn-outline-orange">
+            GitHub &rarr;
+          </a>
+          <a href="https://speed785.github.io/evalforge" class="btn btn-sm btn-ghost-sm">Docs</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Stats Bar -->
+  <section class="stats-bar fade-in">
+    <div class="stats-inner">
+      <div class="stat">
+        <span class="stat-value">5</span>
+        <span class="stat-label">tools</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-value">Python + TypeScript</span>
+        <span class="stat-label">dual SDK</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-value">MIT</span>
+        <span class="stat-label">license</span>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat">
+        <span class="stat-value">Zero</span>
+        <span class="stat-label">required deps</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-brand">
+        <span class="logo-bracket">[</span>speed785<span class="logo-bracket">]</span>
+      </div>
+      <p class="footer-text">Open-source AI agent tooling. Built with care.</p>
+      <div class="footer-links">
+        <a href="https://github.com/speed785" target="_blank" rel="noopener">GitHub</a>
+      </div>
+      <p class="footer-copy">&copy; 2025 speed785. MIT License.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
